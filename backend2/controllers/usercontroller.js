@@ -1,7 +1,8 @@
 const  User  = require("../models/userSchema");
 const cloudinary = require('cloudinary').v2;
+const asyncErrorHandler = require('../middlewares/asyncErrorHandler');
 
-const register = async(req, res, next) => {
+const register = asyncErrorHandler( async(req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         const err = new Error("Profile Image Required");
         err.statusCode = 400;
@@ -53,11 +54,6 @@ const register = async(req, res, next) => {
         message: "User Registered",
         success: true,
     });
-};
+});
 
 module.exports = register;
-
-
-Select r.student_id as Student ID, s.first_name as First Name
-from registration as r,Student as s 
-where r.student_id == s.student_id and r.fullterm_grade == 'A' and (r.reg_year == 2012 or r.reg_year == 2013)
