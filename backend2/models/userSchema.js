@@ -44,6 +44,10 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    moneyspend:{
+        type: Number,
+        default: 0
+    },
     auctionsWon:{
         type: Number,
         default: 0
