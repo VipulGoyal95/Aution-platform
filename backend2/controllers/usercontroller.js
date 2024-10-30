@@ -1,12 +1,21 @@
 const  User  = require("../models/userSchema");
+const jwt = require('jsonwebtoken');
+const  bcrypt =require('bcrypt');
 const cloudinary = require('cloudinary').v2;
 const asyncErrorHandler = require('../middlewares/asyncErrorHandler');
 
+const generatetoken = (id)=>{
+    const token = jwt.sign({id: id}, process.env.JWT_SECRET, {expiresIn: "1h"});
+    return token;
+}
+const comparepassword = async(enteredPassword,password)=>{
+    return await bcrypt.compare(enteredPassword, password);
+}
 const register = asyncErrorHandler( async(req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         const err = new Error("Profile Image Required");
         err.statusCode = 400;
-        return next(err); 
+        return next(err);
     }
 
     const { profileImage } = req.files;
@@ -36,10 +45,11 @@ const register = asyncErrorHandler( async(req, res, next) => {
         err.statusCode = 500;
         return next(err)
     }
+    const hashedpassword = await bcrypt.hash(password,10);
     const newUser = new User({
         Username,
         email,
-        password,
+        password: hashedpassword,
         address,
         phone,
         role,
@@ -50,9 +60,12 @@ const register = asyncErrorHandler( async(req, res, next) => {
     } )
 
     await newUser.save();
+    console.log(newUser);
+    const token = generatetoken(newUser._id);
+    res.cookie("token", token, { expiresIn: "1h" });
     res.status(200).json({
         message: "User Registered",
-        success: true,
+        success: true, 
     });
 });
 
