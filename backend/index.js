@@ -3,11 +3,13 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const { connection } = require('./db/connection.js');
 require('dotenv').config();
-const app=express();
 const userroute = require("./routes/userroutes.js");
 const errorMiddleware  = require('./middlewares/error.js');
 const cloudinary = require('cloudinary');
+const auctionItemRoute = require("./routes/auctionItemRoutes.js");
 
+
+const app=express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended:true}));
@@ -20,7 +22,9 @@ cloudinary.v2.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 })
-app.use("/api/v1",userroute)
+app.use("/api/v1/user",userroute)
+app.use("/api/v1/auctionitem",auctionItemRoute)
+
 app.use(errorMiddleware)
 
 connection();

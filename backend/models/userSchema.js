@@ -1,85 +1,63 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  userName: {
-    type: String,
-    minLength: [3, "Username must caontain at least 3 characters."],
-    maxLength: [40, "Username cannot exceed 40 characters."],
-  },
-  password: {
-    type: String,
-    selected: false,
-    minLength: [8, "Password must caontain at least 8 characters."],
-  },
-  email: String,
-  address: String,
-  phone: {
-    type: String,
-    minLength: [11, "Phone Number must caontain exact 11 digits."],
-    maxLength: [11, "Phone Number must caontain exact 11 digits."],
-  },
-  profileImage: {
-    public_id: {
-      type: String,
-      required: true,
+    Username:{
+        type:String,
+        required:true
     },
-    url: {
-      type: String,
-      required: true,
+    email:{
+        type:String,
+        required:true
     },
-  },
-  paymentMethods: {
-    bankTransfer: {
-      bankAccountNumber: String,
-      bankAccountName: String,
-      bankName: String,
+    password:{
+        type:String,
+        required:true
     },
-    easypaisa: {
-      easypaisaAccountNumber: Number,
+    address: String,
+    phone:{
+        type:String,
+        minLength: [11,'Phone Number must contain exact 11 digits'],
+        maxLength: [11,'Phone Number must contain exact 11 digits']
     },
-    paypal: {
-      paypalEmail: String,
+    profileImage:{
+        public_id:{
+            type:String,
+            // required:true
+        },
+        url:{
+            type:String,
+            // required:true
+        }
     },
-  },
-  role: {
-    type: String,
-    enum: ["Auctioneer", "Bidder", "Super Admin"],
-  },
-  unpaidCommission: {
-    type: Number,
-    default: 0,
-  },
-  auctionsWon: {
-    type: Number,
-    default: 0,
-  },
-  moneySpent: {
-    type: Number,
-    default: 0,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+    paymentMethods:{
+        bankTransfer:{
+            bankAccountNumber: String,
+            bankAccountName: String,
+            bankName: String
+        }
+    },
+    role:{
+        type: String,
+        enum: ["Auctioneer","Bidder","Super Admin"],
+    },
+    unpaidCommission:{
+        type: Number,
+        default: 0,
+    },
+    moneyspend:{
+        type: Number,
+        default: 0
+    },
+    auctionsWon:{
+        type: Number,
+        default: 0
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now
+    }
+})
 
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    next();
-  }
-  this.password = await bcrypt.hash(this.password, 10);
-});
+const User = mongoose.model("User",userSchema);
 
-userSchema.methods.comparePassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
-};
-
-userSchema.methods.generateJsonWebToken = function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-    expiresIn: process.env.JWT_EXPIRE,
-  });
-};
-
-export const User = mongoose.model("User", userSchema);
+module.exports = User;
