@@ -18,8 +18,14 @@ const register = asyncErrorHandler(async (req, res, next) => {
         err.statusCode = 400;
         return next(err);
     }
-
+    
     const { profileImage } = req.files;
+    const allowedformats = ["image/png","image/jpeg","image/webp"];
+    if (!allowedformats.includes(profileImage.mimetype)) {
+        const err = new Error("Invalid profile image format. Only PNG, JPEG, and WebP are allowed");
+        err.statusCode = 400;
+        return next(err);
+    }
     const { Username, email, password, address, phone, role } = req.body;
 
     if (!Username || !email || !password || !address || !phone || !role) {
@@ -93,6 +99,7 @@ const login = asyncErrorHandler(async (req, res, next) => {
         message: "Login Successful",
         token: generatetoken(user._id,res),
         success: true,
+        user: user
     })
 })
 

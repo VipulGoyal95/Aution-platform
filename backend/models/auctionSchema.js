@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-import { Auction } from './auctionSchema';
 
 const auctionschema = new mongoose.Schema({
     title:{
@@ -26,11 +25,11 @@ const auctionschema = new mongoose.Schema({
     image:{
         public_id:{
             type: String,
-            required: true
+            // required: true
         },
         url:{
             type: String,
-            required: true
+            // required: true
         }
     },
     startingBid:{
