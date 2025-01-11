@@ -7,7 +7,8 @@ const userroute = require("./routes/userroutes.js");
 const errorMiddleware  = require('./middlewares/error.js');
 const cloudinary = require('cloudinary');
 const auctionItemRoute = require("./routes/auctionItemRoutes.js");
-
+const bidRoute = require("./routes/bidRoute.js");
+const commissionRoute = require("./routes/commissionRoute.js");
 
 const app=express();
 app.use(cookieParser());
@@ -24,8 +25,11 @@ cloudinary.v2.config({
 })
 app.use("/api/v1/user",userroute)
 app.use("/api/v1/auctionitem",auctionItemRoute)
+app.use("/api/v1/bid",bidRoute);
+app.use("/api/v1/commission",commissionRoute);
 
-app.use(errorMiddleware)
+app.use(errorMiddleware);
+
 
 connection();
 app.listen(process.env.PORT,()=>{
