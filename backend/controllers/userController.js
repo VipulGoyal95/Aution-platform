@@ -4,9 +4,14 @@ import bcrypt from 'bcrypt';
 import cloudinary from 'cloudinary';
 import asyncErrorHandler from '../middlewares/asyncErrorHandler.js';
 
-const generatetoken = (id,res) => {
+const generatetoken = (id, res) => {
     const token = jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-    res.cookie("token", token, { expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRE*24*60*60*1000),httpOnly: true});
+    res.cookie("token", token, {
+        expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+        httpOnly: true,
+        sameSite: 'None',
+        secure: true
+    });
     return token;
 }
 const comparepassword = async (enteredPassword, password) => {
@@ -112,12 +117,16 @@ const getUserprofile = (req,res)=>{
     })
 }
 
-const logout = asyncErrorHandler( async(req,res,next)=>{
-    res.clearCookie("token");
-    res.status(200).json({
+const logout = asyncErrorHandler(async (req, res, next) => {
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true,
+        sameSite: 'None',
+        secure: true
+    }).status(200).json({
         message: "Logout Successful",
         success: true,
-    })
+    });
 })
 
 const fetchLeaderboard = asyncErrorHandler(async (req, res, next) => {
