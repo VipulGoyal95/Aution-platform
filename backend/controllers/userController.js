@@ -120,4 +120,13 @@ const logout = asyncErrorHandler( async(req,res,next)=>{
     })
 })
 
-export { register, login, logout, getUserprofile };
+const fetchLeaderboard = asyncErrorHandler(async (req, res, next) => {
+    const users = await User.find({ moneyspent: { $gt: 0 } });
+    const leaderboard = users.sort((a, b) => b.moneyspent - a.moneyspent);
+    res.status(200).json({
+      success: true,
+      leaderboard,
+    });
+  });
+
+export { register, login, logout, getUserprofile, fetchLeaderboard };

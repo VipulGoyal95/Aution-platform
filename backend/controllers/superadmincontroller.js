@@ -177,4 +177,4 @@ const monthlyRevenue = asyncErrorHandler(async(req,res,next)=>{
     })
 })
 
-export { removefromAuction, getAllpaymentproofs, getpaymentproofDetail, updateproofStatus, deletePaymentproof, fetchAllusers };
+export { removefromAuction, getAllpaymentproofs, getpaymentproofDetail, updateproofStatus, deletePaymentproof, fetchAllusers, monthlyRevenue };

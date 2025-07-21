@@ -54,8 +54,9 @@ app.use(errorMiddleware);
 
 endedAuctionCron();
 verifyCommissionCron();
-connection();
 
-app.listen(process.env.PORT,()=>{
-    console.log(`listening on http://localhost:${process.env.PORT}`);
-})
+connection().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log(`listening on http://localhost:${process.env.PORT}`);
+    });
+});
