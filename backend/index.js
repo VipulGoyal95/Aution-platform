@@ -9,6 +9,7 @@ const cloudinary = require('cloudinary');
 const auctionItemRoute = require("./routes/auctionItemRoutes.js");
 const bidRoute = require("./routes/bidRoute.js");
 const commissionRoute = require("./routes/commissionRoute.js");
+const superAdminRoutes = require("./routes/superAdminRoutes.js");
 
 const app=express();
 app.use(cookieParser());
@@ -27,6 +28,7 @@ app.use("/api/v1/user",userroute)
 app.use("/api/v1/auctionitem",auctionItemRoute)
 app.use("/api/v1/bid",bidRoute);
 app.use("/api/v1/commission",commissionRoute);
+app.use("/api/v1/superadmin",superAdminRoutes);
 
 app.use(errorMiddleware);
 
