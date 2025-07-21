@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from "cors";
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import { connection } from './db/connection.js';
@@ -14,6 +15,13 @@ import { endedAuctionCron } from "./automation/endedAuctionCron.js";
 import { verifyCommissionCron } from "./automation/verifyCommissionCron.js";
 
 dotenv.config();
+app.use(
+    cors({
+      origin: [process.env.FRONTEND_URL],
+      methods: ["POST", "GET", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
 
 const app=express();
 app.use(cookieParser());
