@@ -1,9 +1,9 @@
-const { default: mongoose } = require("mongoose");
-const asyncErrorHandler = require("../middlewares/asyncErrorHandler");
-const Auction = require("../models/auctionSchema");
-const Paymentproof = require("../models/paymentproofSchema");
-const User = require("../models/userSchema");
-const Commission = require("../models/commissionSchema");
+import mongoose from "mongoose";
+import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
+import Auction from "../models/auctionSchema.js";
+import Paymentproof from "../models/paymentproofSchema.js";
+import User from "../models/userSchema.js";
+import Commission from "../models/commissionSchema.js";
 
 const removefromAuction = asyncErrorHandler(async(req,res,next)=>{
     const {id} = req.params;
@@ -177,4 +177,4 @@ const monthlyRevenue = asyncErrorHandler(async(req,res,next)=>{
     })
 })
 
-module.exports = {removefromAuction,getAllpaymentproofs,getpaymentproofDetail,updateproofStatus,deletePaymentproof,fetchAllusers};
+export { removefromAuction, getAllpaymentproofs, getpaymentproofDetail, updateproofStatus, deletePaymentproof, fetchAllusers };

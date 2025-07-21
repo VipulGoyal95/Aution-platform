@@ -1,8 +1,8 @@
-const User = require("../models/userSchema");
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const cloudinary = require('cloudinary').v2;
-const asyncErrorHandler = require('../middlewares/asyncErrorHandler');
+import User from "../models/userSchema.js";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import cloudinary from 'cloudinary';
+import asyncErrorHandler from '../middlewares/asyncErrorHandler.js';
 
 const generatetoken = (id,res) => {
     const token = jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: "1h" });
@@ -120,4 +120,4 @@ const logout = asyncErrorHandler( async(req,res,next)=>{
     })
 })
 
-module.exports = {register,login,logout,getUserprofile};
+export { register, login, logout, getUserprofile };

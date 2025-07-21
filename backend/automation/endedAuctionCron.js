@@ -6,8 +6,7 @@ import User from "../models/userSchema.js";
 import Bid from "../models/bidSchema.js";
 
 import { sendEmail } from "../utils/sendEmail.js";
-import commissionControllerPkg from "../controllers/commissioncontroller.js";
-const { calculateCommission } = commissionControllerPkg;
+import { calculateCommission } from "../controllers/commissioncontroller.js";
 
 export const endedAuctionCron = () => {
   cron.schedule("*/1 * * * *", async () => {

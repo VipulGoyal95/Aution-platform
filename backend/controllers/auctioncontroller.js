@@ -1,8 +1,8 @@
-const { default: mongoose } = require("mongoose");
-const asyncErrorHandler = require("../middlewares/asyncErrorHandler");
-const Auction = require("../models/auctionSchema");
-const User = require("../models/userSchema");
-const cloudinary = require("cloudinary").v2;
+import mongoose from "mongoose";
+import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
+import Auction from "../models/auctionSchema.js";
+import User from "../models/userSchema.js";
+import cloudinary from "cloudinary";
 
 const addnewAuction = asyncErrorHandler(async (req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
@@ -47,7 +47,7 @@ const addnewAuction = asyncErrorHandler(async (req, res, next) => {
     }
 
     try {
-        const cloudinaryresp = await cloudinary.uploader.upload(
+        const cloudinaryresp = await cloudinary.v2.uploader.upload(
             image.tempFilePath,
             {
                 folder: "MERN_AUCTION_PLATFORM_AUCTION_DETAILS",
@@ -200,4 +200,4 @@ const republishItem = asyncErrorHandler(async(req,res,next)=>{
     })
 })
 
-module.exports = { addnewAuction,getAllItem,getMyAuctionItems,getAuctionDetails,removefromAuction,republishItem};
+export { addnewAuction, getAllItem, getMyAuctionItems, getAuctionDetails, removefromAuction, republishItem };

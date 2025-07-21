@@ -1,7 +1,7 @@
-const asyncErrorHandler = require("../middlewares/asyncErrorHandler");
-const Paymentproof = require("../models/paymentproofSchema");
-const User = require("../models/userSchema");
-const cloudinary = require("cloudinary").v2;
+import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
+import Paymentproof from "../models/paymentproofSchema.js";
+import User from "../models/userSchema.js";
+import cloudinary from "cloudinary";
 
 const calculateCommission = async (auctionId) => {
     const auction = await Auction.findById(auctionId);
@@ -78,4 +78,4 @@ const proofofcommission = asyncErrorHandler(async(req,res,next)=>{
     })
 })
 
-module.exports = {proofofcommission,calculateCommission};
+export { proofofcommission, calculateCommission };

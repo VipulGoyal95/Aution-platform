@@ -1,7 +1,7 @@
-const asyncErrorHandler = require("../middlewares/asyncErrorHandler");
-const Auction = require("../models/auctionSchema");
-const Bid = require("../models/bidSchema");
-const User = require("../models/userSchema");
+import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
+import Auction from "../models/auctionSchema.js";
+import Bid from "../models/bidSchema.js";
+import User from "../models/userSchema.js";
 
 const placebid = asyncErrorHandler( async(req,res,next)=>{
     const {id} = req.params;
@@ -74,4 +74,4 @@ const placebid = asyncErrorHandler( async(req,res,next)=>{
     }
 })
 
-module.exports = placebid;
+export default placebid;
