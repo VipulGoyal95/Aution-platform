@@ -26,9 +26,9 @@ const register = asyncErrorHandler(async (req, res, next) => {
         err.statusCode = 400;
         return next(err);
     }
-    const { Username, email, password, address, phone, role } = req.body;
+    const { userName, email, password, address, phone, role } = req.body;
 
-    if (!Username || !email || !password || !address || !phone || !role) {
+    if (!userName || !email || !password || !address || !phone || !role) {
         const err = new Error("Please fill the full form");
         err.statusCode = 400;
         return next(err);
@@ -54,7 +54,7 @@ const register = asyncErrorHandler(async (req, res, next) => {
     }
     const hashedpassword = await bcrypt.hash(password, 10);
     const newUser = new User({
-        Username,
+        userName,
         email,
         password: hashedpassword,
         address,
