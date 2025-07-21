@@ -173,10 +173,13 @@ const SignUp = () => {
                     disabled={role === "Bidder"}
                   >
                     <option value="">Select Your Bank</option>
-                    <option value="Meezan Bank">Meezan Bank</option>
-                    <option value="UBL">UBL</option>
-                    <option value="HBL">HBL</option>
-                    <option value="Allied Bank">Allied Bank</option>
+                    <option value="SBI Bank">SBI Bank</option>
+                    <option value="HDFC">HDFC</option>
+                    <option value="ICICI">ICICI</option>
+                    <option value="Canara Bank">Canara Bank</option>
+                    <option value="Yes Bank">Yes Bank</option>
+                    <option value="PNB">PNB</option>
+                    <option value="BOB">BOB</option>
                   </select>
                   <input
                     type="text"

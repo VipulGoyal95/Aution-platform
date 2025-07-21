@@ -1,9 +1,9 @@
-const express = require('express');
-const {isAuth,isAuthorised} = require("../middlewares/auth");
-const proofofcommission = require('../controllers/commissioncontroller');
+import express from 'express';
+import { isAuth, isAuthorised } from "../middlewares/auth.js";
+import {proofofcommission} from '../controllers/commissioncontroller.js';
 
 const router = express.Router();
 
 router.post("/proof",isAuth,isAuthorised("Auctioneer"),proofofcommission);
 
-module.exports = router
+export default router;

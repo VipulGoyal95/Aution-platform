@@ -1,15 +1,19 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const fileUpload = require('express-fileupload');
-const { connection } = require('./db/connection.js');
-require('dotenv').config();
-const userroute = require("./routes/userroutes.js");
-const errorMiddleware  = require('./middlewares/error.js');
-const cloudinary = require('cloudinary');
-const auctionItemRoute = require("./routes/auctionItemRoutes.js");
-const bidRoute = require("./routes/bidRoute.js");
-const commissionRoute = require("./routes/commissionRoute.js");
-const superAdminRoutes = require("./routes/superAdminRoutes.js");
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import fileUpload from 'express-fileupload';
+import { connection } from './db/connection.js';
+import dotenv from 'dotenv';
+import userroute from "./routes/userroutes.js";
+import errorMiddleware from './middlewares/error.js';
+import cloudinary from 'cloudinary';
+import auctionItemRoute from "./routes/auctionItemRoutes.js";
+import bidRoute from "./routes/bidRoute.js";
+import commissionRoute from "./routes/commissionRoute.js";
+import superAdminRoutes from "./routes/superAdminRoutes.js";
+import { endedAuctionCron } from "./automation/endedAuctionCron.js";
+import { verifyCommissionCron } from "./automation/verifyCommissionCron.js";
+
+dotenv.config();
 
 const app=express();
 app.use(cookieParser());
@@ -32,8 +36,10 @@ app.use("/api/v1/superadmin",superAdminRoutes);
 
 app.use(errorMiddleware);
 
-
+endedAuctionCron();
+verifyCommissionCron();
 connection();
+
 app.listen(process.env.PORT,()=>{
     console.log(`listening on http://localhost:${process.env.PORT}`);
 })

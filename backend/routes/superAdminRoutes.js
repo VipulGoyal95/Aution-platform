@@ -1,6 +1,6 @@
-const express = require('express');
-const {isAuth,isAuthorised} = require("../middlewares/auth");
-const { removefromAuction, getAllpaymentproofs, getpaymentproofDetail, updateproofStatus, deletePaymentproof, fetchAllusers } = require('../controllers/superadmincontroller');
+import express from 'express';
+import { isAuth, isAuthorised } from "../middlewares/auth.js";
+import { removefromAuction, getAllpaymentproofs, getpaymentproofDetail, updateproofStatus, deletePaymentproof, fetchAllusers } from '../controllers/superadmincontroller.js';
 const router = express.Router();
 
 router.delete("/auctionitem/delete/:id",isAuth,isAuthorised("Super Admin"),removefromAuction);
@@ -15,4 +15,4 @@ router.delete("/paymentproof/delete/:id",isAuth,isAuthorised("Super Admin"),dele
 
 router.get("/users/getall",isAuth,isAuthorised("Super Admin"),fetchAllusers)
 
-module.exports = router;
+export default router;

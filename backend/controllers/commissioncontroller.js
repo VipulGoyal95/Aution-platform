@@ -3,6 +3,16 @@ const Paymentproof = require("../models/paymentproofSchema");
 const User = require("../models/userSchema");
 const cloudinary = require("cloudinary").v2;
 
+const calculateCommission = async (auctionId) => {
+    const auction = await Auction.findById(auctionId);
+    if (!mongoose.Types.ObjectId.isValid(auctionId)) {
+      return next(new ErrorHandler("Invalid Auction Id format.", 400));
+    }
+    const commissionRate = 0.05;
+    const commission = auction.currentBid * commissionRate;
+    return commission;
+  };
+
 const proofofcommission = asyncErrorHandler(async(req,res,next)=>{
     if (!req.files || Object.keys(req.files).length === 0) {
         const err = new Error("Screenshot of payment is required");
@@ -68,4 +78,4 @@ const proofofcommission = asyncErrorHandler(async(req,res,next)=>{
     })
 })
 
-module.exports = proofofcommission;
+module.exports = {proofofcommission,calculateCommission};
