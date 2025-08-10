@@ -12,8 +12,9 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [bankAccountName, setBankAccountName] = useState("");
   const [bankAccountNumber, setBankAccountNumber] = useState("");
+  const [bankIFSCCode, setBankIFSCCode] = useState("");
   const [bankName, setBankName] = useState("");
-  const [easypaisaAccountNumber, setEasypaisaAccountNumber] = useState("");
+  // const [easypaisaAccountNumber, setEasypaisaAccountNumber] = useState("");
   const [paypalEmail, setPaypalEmail] = useState("");
   const [profileImage, setProfileImage] = useState("");
   const [profileImagePreview, setProfileImagePreview] = useState("");
@@ -36,7 +37,7 @@ const SignUp = () => {
       (formData.append("bankAccountName", bankAccountName),
       formData.append("bankAccountNumber", bankAccountNumber),
       formData.append("bankName", bankName),
-      formData.append("easypaisaAccountNumber", easypaisaAccountNumber),
+      // formData.append("easypaisaAccountNumber", easypaisaAccountNumber),
       formData.append("paypalEmail", paypalEmail));
     dispatch(register(formData));
   };
@@ -183,9 +184,9 @@ const SignUp = () => {
                   </select>
                   <input
                     type="text"
-                    value={bankAccountNumber}
-                    placeholder="IBAN / IFSC"
-                    onChange={(e) => setBankAccountNumber(e.target.value)}
+                    value={bankIFSCCode}
+                    placeholder="IFSC Code"
+                    onChange={(e) => setBankIFSCCode(e.target.value)}
                     className="text-[16px] py-2 bg-transparent border-b-[1px] border-b-stone-500 focus:outline-none sm:flex-1"
                     disabled={role === "Bidder"}
                   />
@@ -201,25 +202,25 @@ const SignUp = () => {
               </div>
               <div>
                 <label className="text-[16px] text-stone-600 font-semibold">
-                  Easypaisa And Paypal Details
+                  Bank Account Details
                 </label>
                 <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
                   <input
                     type="number"
-                    value={easypaisaAccountNumber}
-                    placeholder="Easypaisa Account Number"
-                    onChange={(e) => setEasypaisaAccountNumber(e.target.value)}
+                    value={bankAccountNumber}
+                    placeholder="Bank Account Number"
+                    onChange={(e) => setBankAccountNumber(e.target.value)}
                     className="text-[16px] py-2 bg-transparent border-b-[1px] border-b-stone-500 focus:outline-none sm:flex-1"
                     disabled={role === "Bidder"}
                   />
-                  <input
+                  {/* <input
                     type="email"
                     value={paypalEmail}
                     placeholder="Paypal Email"
                     onChange={(e) => setPaypalEmail(e.target.value)}
                     className="text-[16px] py-2 bg-transparent border-b-[1px] border-b-stone-500 focus:outline-none sm:flex-1"
                     disabled={role === "Bidder"}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

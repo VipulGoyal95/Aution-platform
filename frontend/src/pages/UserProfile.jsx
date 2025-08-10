@@ -97,7 +97,7 @@ const UserProfile = () => {
                 </div>
               </div>
 
-              {user.role === "Auctioneer" && (
+              {/* {user.role === "Auctioneer" && (
                 <div className="mb-6 w-full">
                   <h3 className="text-xl font-semibold mb-4">
                     Payment Details
@@ -166,7 +166,7 @@ const UserProfile = () => {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
 
               <div className="mb-6 w-full">
                 <h3 className="text-xl font-semibold mb-4">
