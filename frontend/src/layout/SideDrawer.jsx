@@ -35,9 +35,8 @@ const SideDrawer = () => {
         <GiHamburgerMenu />
       </div>
       <div
-        className={`w-[100%] sm:w-[300px] bg-gradient-to-b from-purple-50 to-blue-50 h-full fixed top-0 ${
-          show ? "left-0" : "left-[-100%]"
-        } transition-all duration-100 p-4 flex flex-col justify-between lg:left-0 border-r-[1px] border-r-purple-200`}
+        className={`w-[100%] sm:w-[300px] bg-gradient-to-b from-purple-50 to-blue-50 h-full fixed top-0 ${show ? "left-0" : "left-[-100%]"
+          } transition-all duration-100 p-4 flex flex-col justify-between lg:left-0 border-r-[1px] border-r-purple-200`}
       >
         <div className="relative">
           <Link to={"/"}>
@@ -100,33 +99,37 @@ const SideDrawer = () => {
           {isAuthenticated ? (
             <>
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <BiUser className="text-2xl" />
-                  <span className="text-lg font-semibold text-indigo-600">{user?.userName}</span>
-                </div>
-                <Link
-                  to={"/dashboard"}
-                  className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  to={"/create-auction"}
-                  className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
-                >
-                  Create Auction
-                </Link>
-                <Link
-                  to={"/view-my-auctions"}
-                  className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
-                >
-                  My Auctions
-                </Link>
-                <Link to={"/submit-commission"} 
-                className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white">
-                  <BiReceipt className="inline mr-2" />
-                  Submit Commission
-                </Link>
+                {user?.role === "Auctioneer" &&
+                  <>
+                    <div className="flex items-center gap-2">
+                      <BiUser className="text-2xl" />
+                      <span className="text-lg font-semibold text-indigo-600">{user?.userName}</span>
+                    </div>
+                    <Link
+                      to={"/dashboard"}
+                      className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to={"/create-auction"}
+                      className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
+                    >
+                      Create Auction
+                    </Link>
+                    <Link
+                      to={"/view-my-auctions"}
+                      className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
+                    >
+                      My Auctions
+                    </Link>
+                    <Link to={"/submit-commission"}
+                      className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white">
+                      <BiReceipt className="inline mr-2" />
+                      Submit Commission
+                    </Link>
+                  </>
+                }
                 <hr className="mb-4 border-t-indigo-600" />
                 <Link
                   to={"/me"}
