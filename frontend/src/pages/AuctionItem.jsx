@@ -117,8 +117,11 @@ const AuctionItem = () => {
                               alt={element.userName}
                               className="w-12 h-12 rounded-full my-2 hidden md:block"
                             />
-                            <p className="text-[18px] font-semibold">
+                            <p className="text-[18px] font-semibold text-black">
                               {element.userName}
+                            </p>
+                            <p className="text-[18px] font-semibold text-red-600">
+                              {element.amount}
                             </p>
                           </div>
                           {index === 0 ? (
