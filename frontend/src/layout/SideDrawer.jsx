@@ -112,20 +112,21 @@ const SideDrawer = () => {
                 </Link>
                 <Link
                   to={"/create-auction"}
-                  className="text-purple-600 bg-transparent border-purple-600 border-2 hover:bg-purple-50 hover:text-purple-700 font-bold text-xl py-1 px-4 rounded-md"
+                  className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
                 >
                   Create Auction
                 </Link>
                 <Link
-                  to={"/my-auctions"}
+                  to={"/view-my-auctions"}
                   className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white"
                 >
                   My Auctions
                 </Link>
-                <button className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white">
+                <Link to={"/submit-commission"} 
+                className="bg-indigo-600 font-semibold hover:bg-indigo-700 text-xl py-1 px-4 rounded-md text-white">
                   <BiReceipt className="inline mr-2" />
                   Submit Commission
-                </button>
+                </Link>
                 <hr className="mb-4 border-t-indigo-600" />
                 <Link
                   to={"/profile"}
