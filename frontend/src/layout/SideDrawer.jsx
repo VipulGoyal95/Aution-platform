@@ -102,7 +102,7 @@ const SideDrawer = () => {
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <BiUser className="text-2xl" />
-                  <span className="text-lg font-semibold">{user?.name}</span>
+                  <span className="text-lg font-semibold text-indigo-600">{user?.userName}</span>
                 </div>
                 <Link
                   to={"/dashboard"}
@@ -129,7 +129,7 @@ const SideDrawer = () => {
                 </Link>
                 <hr className="mb-4 border-t-indigo-600" />
                 <Link
-                  to={"/profile"}
+                  to={"/me"}
                   className="flex text-xl font-semibold gap-2 items-center hover:text-indigo-600 hover:transition-all hover:duration-150"
                 >
                   <BiCog /> Profile
