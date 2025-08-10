@@ -17,16 +17,16 @@ const UpcomingAuctions = () => {
   return (
     <>
       <section className="my-8">
-        <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
-          Auctions For Today
+        <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+          Upcoming Auctions
         </h3>
         <div className="flex flex-wrap gap-6">
           <div  className="bg-[#161613] w-full p-2 gap-10 rounded-md flex flex-col justify-between lg:flex-1 lg:h-auto lg:p-6 2xl:flex-none 2xl:basis-64 2xl:flex-grow 2xl:px-2  2xl:py-6">
-            <span className="rounded-full bg-[#fdba88] text-white w-fit p-3">
+            <span className="rounded-full bg-blue-500 text-white w-fit p-3">
               <RiAuctionFill />
             </span>
             <div>
-              <h3 className="text-[#fdba88] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+              <h3 className="text-blue-600 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                 Auctions For
               </h3>
               <div>
@@ -50,15 +50,15 @@ const UpcomingAuctions = () => {
                       alt={element.title}
                       className="w-16 h-16 2xl:w-10 2xl:h-10"
                     />
-                    <p className="font-extralight text-[#111] text-[12px]">
+                    <p className="font-extralight text-gray-800 text-[12px]">
                       {element.title}
                     </p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="text-stone-600 font-semibold">
+                    <p className="text-blue-500 font-semibold">
                       Starting Bid:
                     </p>{" "}
-                    <p className="text-[#fdba88 font-semibold]">
+                    <p className="text-blue-500 font-semibold">
                       Rs. {element.startingBid}
                     </p>{" "}
                   </div>
@@ -84,15 +84,15 @@ const UpcomingAuctions = () => {
                       alt={element.title}
                       className="w-16 h-16 2xl:w-10 2xl:h-10"
                     />
-                    <p className="font-extralight text-[#111] text-[12px]">
+                    <p className="font-extralight text-gray-800 text-[12px]">
                       {element.title}
                     </p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="text-stone-600 font-semibold">
+                    <p className="text-blue-500 font-semibold">
                       Starting Bid:
                     </p>{" "}
-                    <p className="text-[#fdba88 font-semibold]">
+                    <p className="text-blue-500 font-semibold">
                       Rs. {element.startingBid}
                     </p>{" "}
                   </div>
@@ -117,15 +117,15 @@ const UpcomingAuctions = () => {
                       alt={element.title}
                       className="w-16 h-16 2xl:w-10 2xl:h-10"
                     />
-                    <p className="font-extralight text-[#111] text-[12px]">
+                    <p className="font-extralight text-gray-800 text-[12px]">
                       {element.title}
                     </p>
                   </div>
                   <div className="flex justify-between">
-                    <p className="text-stone-600 font-semibold">
+                    <p className="text-blue-500 font-semibold">
                       Starting Bid:
                     </p>{" "}
-                    <p className="text-[#fdba88 font-semibold]">
+                    <p className="text-blue-500 font-semibold">
                       Rs. {element.startingBid}
                     </p>{" "}
                   </div>

@@ -99,7 +99,7 @@ export const Drawer = ({ setOpenDrawer, openDrawer }) => {
       >
         <div className="bg-white h-fit transition-all duration-300 w-full">
           <div className="w-full px-5 py-8 sm:max-w-[640px] sm:m-auto">
-            <h3 className="text-[#D6482B]  text-3xl font-semibold text-center mb-1">
+            <h3 className="text-indigo-600  text-3xl font-semibold text-center mb-1">
               Update Payment Proof
             </h3>
             <p className="text-stone-600">
@@ -160,7 +160,7 @@ export const Drawer = ({ setOpenDrawer, openDrawer }) => {
               <div>
                 <button
                   type="button"
-                  className="bg-blue-500 flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300 hover:bg-blue-700"
+                  className="bg-indigo-600 flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300 hover:bg-indigo-700"
                   onClick={handlePaymentProofUpdate}
                 >
                   {loading ? "Updating Payment Proof" : "Update Payment Proof"}

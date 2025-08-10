@@ -59,12 +59,12 @@ const SignUp = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center bg-gradient-to-br from-purple-50 to-blue-100">
         <div className="bg-white mx-auto w-full h-auto px-2 flex flex-col gap-4 items-center py-4 justify-center rounded-md">
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-indigo-600 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
           >
-            Register
+            Sign Up
           </h1>
           <form
             className="flex flex-col gap-5 w-full"
@@ -225,12 +225,11 @@ const SignUp = () => {
             </div>
 
             <button
-              className="bg-[#d6482b] w-[420px] font-semibold hover:bg-[#b8381e] transition-all duration-300 text-xl py-2 px-4 rounded-md text-white mx-auto lg:w-[640px] my-4"
+              className="bg-indigo-600 w-[420px] font-semibold hover:bg-indigo-700 transition-all duration-300 text-xl py-2 px-4 rounded-md text-white mx-auto lg:w-[640px] my-4"
               type="submit"
               disabled={loading}
             >
-              {loading && "Registering..."}
-              {!loading && "Register"}
+              {loading ? "Creating Account..." : "Sign Up"}
             </button>
           </form>
         </div>

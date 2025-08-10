@@ -35,18 +35,18 @@ const AuctionItem = () => {
   }, [isAuthenticated]);
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen bg-gradient-to-br from-purple-50 to-blue-100">
         <div className="text-[16px] flex flex-wrap gap-2 items-center">
           <Link
             to="/"
-            className="font-semibold transition-all duration-300 hover:text-[#D6482B]"
+            className="font-semibold transition-all duration-300 hover:text-indigo-600"
           >
             Home
           </Link>
           <FaGreaterThan className="text-stone-400" />
           <Link
             to={"/auctions"}
-            className="font-semibold transition-all duration-300 hover:text-[#D6482B]"
+            className="font-semibold transition-all duration-300 hover:text-indigo-600"
           >
             Auctions
           </Link>
@@ -66,18 +66,18 @@ const AuctionItem = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-around pb-4">
-                  <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+                  <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                     {auctionDetail.title}
                   </h3>
                   <p className="text-xl font-semibold">
                     Condition:{" "}
-                    <span className="text-[#D6482B]">
+                    <span className="text-indigo-600">
                       {auctionDetail.condition}
                     </span>
                   </p>
                   <p className="text-xl font-semibold">
                     Minimum Bid:{" "}
-                    <span className="text-[#D6482B]">
+                    <span className="text-indigo-600">
                       Rs.{auctionDetail.startingBid}
                     </span>
                   </p>
@@ -161,7 +161,7 @@ const AuctionItem = () => {
                 )}
               </div>
 
-              <div className="bg-[#D6482B] py-4 text-[16px] md:text-[24px] font-semibold px-4 flex items-center justify-between">
+              <div className="bg-indigo-600 py-4 text-[16px] md:text-[24px] font-semibold px-4 flex items-center justify-between">
                 {Date.now() >= new Date(auctionDetail.startTime) &&
                 Date.now() <= new Date(auctionDetail.endTime) ? (
                   <>

@@ -23,33 +23,33 @@ const Home = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center bg-gradient-to-br from-purple-50 to-blue-100">
         <div>
-          <p className="text-[#DECCBE] font-bold text-xl mb-8">
+          <p className="text-purple-600 font-bold text-xl mb-8">
             Transparency Leads to Your Victory
           </p>
           <h1
-            className={`text-[#111] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-gray-800 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
           >
-            Transparent Auctions
+            PrimeBid
           </h1>
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-indigo-600 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
           >
-            Be The Winner
+            Lead to the Winner
           </h1>
           <div className="flex gap-4 my-8">
             {!isAuthenticated && (
               <>
                 <Link
                   to="/sign-up"
-                  className="bg-[#d6482b] font-semibold hover:bg-[#b8381e] rounded-md px-8 flex items-center py-2 text-white  transition-all duration-300"
+                  className="bg-indigo-600 font-semibold hover:bg-indigo-700 rounded-md px-8 flex items-center py-2 text-white  transition-all duration-300"
                 >
                   Sign Up
                 </Link>
                 <Link
                   to={"/login"}
-                  className="text-[#DECCBE] bg-transparent border-2 border-[#DECCBE] hover:bg-[#fff3fd] hover:text-[#fdba88] font-bold text-xl  rounded-md px-8 flex items-center py-2 transition-all duration-300"
+                  className="text-purple-600 bg-transparent border-2 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-bold text-xl  rounded-md px-8 flex items-center py-2 transition-all duration-300"
                 >
                   Login
                 </Link>
@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">How it works</h3>
+          <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">How it works</h3>
           <div className="flex flex-col gap-4 md:flex-row md:flex-wrap w-full">
             {howItWorks.map((element) => {
               return (

@@ -25,13 +25,13 @@ const SubmitCommission = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-start">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-start bg-gradient-to-br from-purple-50 to-blue-100">
         <div className="bg-white mx-auto w-full h-auto px-2 flex flex-col gap-4 items-center py-4 justify-center rounded-md">
           <form
             className="flex flex-col gap-5 w-full"
             onSubmit={handlePaymentProof}
           >
-            <h3 className={`text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}>Upload Payment Proof</h3>
+            <h3 className={`text-indigo-600 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}>Upload Payment Proof</h3>
             <div className="flex flex-col gap-2">
               <label className="text-[16px] text-stone-500">Amount</label>
               <input
@@ -61,10 +61,10 @@ const SubmitCommission = () => {
               />
             </div>
               <button
-                className="bg-[#d6482b] mx-auto font-semibold hover:bg-[#b8381e] text-xl transition-all duration-300 py-2 px-4 rounded-md text-white my-4"
+                className="bg-indigo-600 mx-auto font-semibold hover:bg-indigo-700 text-xl transition-all duration-300 py-2 px-4 rounded-md text-white my-4"
                 type="submit"
               >
-                {loading ? "Uploading..." : "Upload Payment Proof"}
+                {loading ? "Uploading..." : "Upload"}
               </button>
           </form>
         </div>

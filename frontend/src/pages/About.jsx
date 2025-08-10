@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const About = () => {
   const values = [
@@ -30,16 +30,15 @@ const About = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] gap-7 flex flex-col min-h-screen py-4 justify-center">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] gap-7 flex flex-col min-h-screen py-4 justify-center bg-gradient-to-br from-purple-50 to-blue-100">
         <div>
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-indigo-600 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
           >
             About Us
           </h1>
           <p className="text-xl text-stone-600">
-            Welcome to PrimeBid, the ultimate destination for online auctions
-            and bidding excitement. Founded in 2024, we are dedicated to
+            Welcome to PrimeBid, the ultimate destination for online auctions             and bidding excitement. we are dedicated to
             providing a dynamic and user-friendly platform for buyers and
             sellers to connect, explore, and transact in a secure and seamless
             environment.
@@ -47,7 +46,7 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
           >
             Our Mission
           </h3>
@@ -61,7 +60,7 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
           >
             Our Values
           </h3>
@@ -77,8 +76,8 @@ const About = () => {
           </ul>
         </div>
         <div>
-          <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+          {/* <h3
+            className={`text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
           >
             Our Story
           </h3>
@@ -88,23 +87,23 @@ const About = () => {
             experience in the auction industry, our team is committed to
             creating a platform that offers an unparalleled auction experience
             for users worldwide.
-          </p>
+          </p> */}
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
           >
             Join Us
           </h3>
           <p className="text-xl text-stone-600">
-            Whether you're looking to buy, sell, or simply explore, PrimeBid
+            Whether you&apos;re looking to buy, sell, or simply explore, PrimeBid
             invites you to join our growing community of auction enthusiasts.
             Discover new opportunities, uncover hidden gems, and experience the
             thrill of winning your next great find.
           </p>
         </div>
         <div>
-          <p className="text-[#d6482b] text-xl font-bold mb-3">
+          <p className="text-indigo-600 text-xl font-bold mb-3">
             Thank you for choosing PrimeBid. We look forward to being a part of
             your auction journey!
           </p>

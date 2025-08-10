@@ -37,33 +37,33 @@ const Dashboard = () => {
         <Spinner />
       ) : (
         <>
-          <div className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col gap-10">
+          <div className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col gap-10 min-h-screen bg-gradient-to-br from-purple-50 to-blue-100">
             <h1
-              className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+              className={`text-indigo-600 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
             >
               Dashboard
             </h1>
             <div className="flex flex-col gap-10">
               <div>
-                <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+                <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                   Monthly Total Payments Received
                 </h3>
                 <PaymentGraph />
               </div>
               <div>
-                <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+                <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                   Users
                 </h3>
                 <BiddersAuctioneersGraph />
               </div>
               <div>
-                <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+                <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                   Payment Proofs
                 </h3>
                 <PaymentProofs />
               </div>
               <div>
-                <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+                <h3 className="text-gray-800 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
                   Delete Items From Auction
                 </h3>
                 <AuctionItemDelete />

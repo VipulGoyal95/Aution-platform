@@ -26,10 +26,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_v01mtcu",
-        "template_3a1r5xp",
+        "service_7fi3blx",
+        "template_uoz4u0q",
         templateParams,
-        "YcOimjllS64zn4ghK"
+        "vu8NQbdo_al3pcY5t"
       )
       .then(() => {
         toast.success("Thank You! Your message has been sent successfully.");
@@ -44,14 +44,14 @@ const Contact = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-start">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-start bg-gradient-to-br from-purple-50 to-blue-100">
         <div className="bg-white mx-auto w-full h-auto px-2 flex flex-col gap-4 items-center py-4 justify-center rounded-md">
           <form
             className="flex flex-col gap-5 w-full"
             onSubmit={handleContactForm}
           >
             <h3
-              className={`text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+              className={`text-indigo-600 text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
             >
               Contact Us
             </h3>
@@ -61,7 +61,7 @@ const Contact = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D6482B]"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 required
               />
             </div>
@@ -71,7 +71,7 @@ const Contact = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D6482B]"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                 type="number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D6482B]"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 required
               />
             </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                 type="text"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D6482B]"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 required
               />
             </div>
@@ -101,13 +101,13 @@ const Contact = () => {
                 rows={7}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D6482B]"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 required
               />
             </div>
 
             <button
-              className="bg-[#d6482b] mx-auto font-semibold hover:bg-[#b8381e] text-xl transition-all duration-300 py-2 px-4 rounded-md text-white my-4"
+              className="bg-indigo-600 mx-auto font-semibold hover:bg-indigo-700 text-xl transition-all duration-300 py-2 px-4 rounded-md text-white my-4"
               type="submit"
             >
               {loading ? "Sending Message..." : "Send Message"}

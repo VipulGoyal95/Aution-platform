@@ -62,13 +62,13 @@ const CardTwo = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
           className="w-full aspect-[4/3] m-auto md:p-12"
         />
         <div className="px-2 pt-4 pb-2">
-          <h5 className="font-semibold text-[18px] group-hover:text-[#d6482b] mb-2">
+          <h5 className="font-semibold text-[18px] group-hover:text-indigo-600 mb-2">
             {title}
           </h5>
           {startingBid && (
             <p className="text-stone-600 font-light">
               Starting Bid:{" "}
-              <span className="text-[#fdba88] font-bold ml-1">
+              <span className="text-blue-500 font-bold ml-1">
                 {startingBid}
               </span>
             </p>
@@ -76,11 +76,11 @@ const CardTwo = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
           <p className="text-stone-600 font-light">
             {timeLeft.type}
             {Object.keys(timeLeft).length > 1 ? (
-              <span className="text-[#fdba88] font-bold ml-1">
+              <span className="text-blue-500 font-bold ml-1">
                 {formatTimeLeft(timeLeft)}
               </span>
             ) : (
-              <span className="text-[#fdba88] font-bold ml-1">Time's up!</span>
+              <span className="text-blue-500 font-bold ml-1">Time's up!</span>
             )}
           </p>
           <div className="flex flex-col gap-2 mt-4">
@@ -133,7 +133,7 @@ const Drawer = ({ setOpenDrawer, openDrawer, id }) => {
     >
       <div className="bg-white h-fit transition-all duration-300 w-full">
         <div className="w-full px-5 py-8 sm:max-w-[640px] sm:m-auto">
-          <h3 className="text-[#D6482B]  text-3xl font-semibold text-center mb-1">
+          <h3 className="text-indigo-600  text-3xl font-semibold text-center mb-1">
             Republish Auction
           </h3>
           <p className="text-stone-600">

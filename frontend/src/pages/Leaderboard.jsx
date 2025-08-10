@@ -6,16 +6,16 @@ const Leaderboard = () => {
   const { loading, leaderboard } = useSelector((state) => state.user);
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col">
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen bg-gradient-to-br from-purple-50 to-blue-100">
         {loading ? (
           <Spinner />
         ) : (
           <>
             <div className="flex flex-col min-[340px]:flex-row min-[340px]:gap-2 mb-5">
               <h1
-                className={`text-[#D6482B] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+                className={`text-indigo-600 text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
               >
-                Bidders Leaderboard
+                Leaderboard
               </h1>
             </div>
             <div className="overflow-x-auto">
